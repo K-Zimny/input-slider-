@@ -4,7 +4,7 @@ let displayCost = document.getElementById("displayCost")
 let displayPageViews = document.getElementById("displayPageViews");
 let discountSwitch = document.getElementById("discountSwitch");
 
-// let switchState = false;
+let isDiscount = false;
 
 let sliderValue = sliderInput.value;
 
@@ -30,7 +30,11 @@ sliderInput.addEventListener("input", function(){
 //Update the display with cost
 function updateCostDisplay() {
   sliderValue = sliderInput.value;
-  cost = sliderValue;
+  if(isDiscount) {
+    cost = sliderValue * discountPercent;
+  }else {
+    cost = sliderValue;
+  }
   displayCost.innerHTML = cost;
 }
 
@@ -43,53 +47,17 @@ function updatePageViewsDisplay() {
 
 // Discount Input code
 discountSwitch.addEventListener('click', function(){
-  isDiscount();
+  isDiscountToggle();
 })
 
-function isDiscount() {
-sliderValue = sliderInput.value;
-cost = sliderValue * discountPercent;
+function isDiscountToggle() {
+isDiscount = !isDiscount;
+if(isDiscount){
+  cost = sliderValue * discountPercent;
+}
+else {
+  cost = sliderValue
+}
 displayCost.innerHTML = cost;
 }
-
-
-
-
-
-
-
-
-
-
-// displayCost.innerHTML = sliderInput.value
-// displayPageViews.innerHTML = sliderValue * 6.25
-
-// sliderInput.addEventListener("input", function(){
-
-//   if(switchState === true) {
-//     sliderValue = sliderInput.value;
-//     displayCost.innerHTML = discountCost
-//     displayPageViews.innerHTML = sliderValue * 6.25
-//   }
-//   else {
-//     sliderValue = sliderInput.value;
-//     displayCost.innerHTML = sliderValue
-//     displayPageViews.innerHTML = sliderValue * 6.25
-//     console.log(sliderValue)
-//   }
-// })
-
-// discountSwitch.addEventListener("input", function(){
-//   switchState = !switchState;
-//   console.log(`Switch state: ${switchState}`)
-//   if (switchState) {
-//     sliderValue = sliderInput.value;
-//     displayCost.innerHTML = discountCost
-//   } else {
-//     sliderValue = sliderInput.value;
-//     displayCost.innerHTML = sliderValue
-//   }
-// });
-
-
 

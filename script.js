@@ -3,9 +3,7 @@ let sliderInput = document.getElementById("sliderInput");
 let displayCost = document.getElementById("displayCost")
 let displayPageViews = document.getElementById("displayPageViews");
 let discountSwitch = document.getElementById("discountSwitch");
-
 let isDiscount = false;
-
 let sliderValue = sliderInput.value;
 
 //Discount and multiplier 

@@ -6,6 +6,8 @@ let switchState = false;
 
 let sliderValue = sliderInput.value;
 
+// New test
+
 
 displayCost.innerHTML = sliderInput.value
 displayPageViews.innerHTML = sliderValue * 6.25

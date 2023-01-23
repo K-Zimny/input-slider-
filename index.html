@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Slider</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/script.js" defer></script>
+</head>
+<body>
+    <div class="content-container">
+        <div>
+            <p>Total Cost: $<span id="displayCost"></span></p>
+            <p>Total Pageviews:<span id="displayPageViews"></span>K</p>
+        </div>
+        <div class="slidecontainer">
+            <input max="32" min="0" type="range" value="16" id="sliderInput">
+        </div>
+        <div>
+            <label class="switch">
+                <input id="discountSwitch" type="checkbox">
+                <span class="slider round"></span>
+              </label>
+        </div>
+    </div>
+</body>
+</html>

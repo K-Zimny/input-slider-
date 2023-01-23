@@ -28,12 +28,7 @@ sliderInput.addEventListener("input", function(){
 //Update the display with cost
 function updateCostDisplay() {
   sliderValue = sliderInput.value;
-  if(isDiscount) {
-    cost = sliderValue * discountPercent;
-  }else {
-    cost = sliderValue;
-  }
-  displayCost.innerHTML = cost;
+  determineCost();
 }
 
 //Update the display with pageviews
@@ -49,13 +44,16 @@ discountSwitch.addEventListener('click', function(){
 })
 
 function isDiscountToggle() {
-isDiscount = !isDiscount;
-if(isDiscount){
-  cost = sliderValue * discountPercent;
-}
-else {
-  cost = sliderValue
-}
-displayCost.innerHTML = cost;
+  isDiscount = !isDiscount;
+  determineCost();
 }
 
+function determineCost() {
+  if(isDiscount){
+    cost = sliderValue * discountPercent;
+  }
+  else {
+    cost = sliderValue
+  }
+  displayCost.innerHTML = cost;
+}
